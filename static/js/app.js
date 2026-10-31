@@ -105,7 +105,19 @@ function precioMoneda(valor) {
 
 function segundosRestantes(fecha) {
   if (!fecha) return 0;
-  return Math.max(0, Math.ceil((new Date(fecha).getTime() - Date.now()) / 1000));
+
+  console.log("Fecha recibida:", fecha);
+  console.log("Fecha interpretada:", new Date(fecha));
+  console.log("Hora del navegador:", new Date());
+
+  const restante = Math.max(
+    0,
+    Math.ceil((new Date(fecha).getTime() - Date.now()) / 1000)
+  );
+
+  console.log("Segundos restantes:", restante);
+
+  return restante;
 }
 
 function formatoTiempo(segundos) {
